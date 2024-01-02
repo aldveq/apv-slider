@@ -1,0 +1,17 @@
+{
+    "name": "aldveq93/apv-slider",
+    "description": "Free WordPress Slider Plugin.",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "Aldveq93\\ApvSlider\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Aldo Paz Velasquez"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {}
+}
