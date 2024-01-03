@@ -32,3 +32,37 @@ along with AVP Slider. If not, see {URI to Plugin License}.
 if ( ! defined( 'ASPATH' ) ):
 	exit;
 endif;
+
+if ( ! class_exists( 'AVP_Slider' ) ):
+class AVP_Slider {
+	public function __construct() {
+		$this->define_constants();
+	}
+
+	public function define_constants() {
+		define( 'APV_SLIDER_PATH', plugin_dir_path( __FILE__ ) );
+		define( 'APV_SLIDER_URL', plugin_dir_url( __FILE__ ) );
+		define( 'APV_SLIDER_VERSION', '1.0.0' );
+	}
+
+	public static function activate() {
+		update_option( 'rewrite_rules', '' );
+	}
+
+	public static function deactivate() {
+		flush_rewrite_rules();
+	}
+
+	public static function uninstall() {
+	
+	}
+}
+endif;
+
+if ( class_exists( 'AVP_Slider' ) ):
+	register_activation_hook( __FILE__, array( 'APV', 'activate' ) );
+	register_deactivation_hook( __FILE__, array( 'APV', 'deactivate' ) );
+	register_uninstall_hook( __FILE__, array( 'APV', 'uninstall' ) );
+
+	$apv_slider = new AVP_Slider();
+endif;
