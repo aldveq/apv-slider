@@ -33,45 +33,11 @@ if (!defined('ABSPATH')) :
 	exit;
 endif;
 
-if (!class_exists('APV_Slider')) :
-	class APV_Slider
-	{
-		public function __construct()
-		{
-			$this->define_constants();
+require_once dirname( __FILE__ ) . '/vendor/autoload.php';
+require_once dirname( __FILE__ ) . '/inc/autoloader.php';
 
-			require_once(APV_SLIDER_PATH . 'inc/post-types/class-apv-cpt.php');
-			$APV_Slider_Post_Type = new APV_Slider_Post_Type();
-		}
+use APV_Slider\Inc\APV_Slider_Init;
 
-		public function define_constants()
-		{
-			define('APV_SLIDER_PATH', plugin_dir_path(__FILE__));
-			define('APV_SLIDER_URL', plugin_dir_url(__FILE__));
-			define('APV_SLIDER_VERSION', '1.0.0');
-		}
-
-		public static function activate()
-		{
-			update_option('rewrite_rules', '');
-		}
-
-		public static function deactivate()
-		{
-			flush_rewrite_rules();
-			unregister_post_type('apv-slider');
-		}
-
-		public static function uninstall()
-		{
-		}
-	}
-endif;
-
-if (class_exists('APV_Slider')) :
-	register_activation_hook(__FILE__, array('APV_Slider', 'activate'));
-	register_deactivation_hook(__FILE__, array('APV_Slider', 'deactivate'));
-	register_uninstall_hook(__FILE__, array('APV_Slider', 'uninstall'));
-
-	$apv_slider = new APV_Slider();
+if (class_exists('APV_Slider_Init')) :
+	APV_Slider_Init::get_instance();
 endif;

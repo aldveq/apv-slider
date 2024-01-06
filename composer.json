@@ -13,5 +13,7 @@
         }
     ],
     "minimum-stability": "stable",
-    "require": {}
+    "require": {
+        "htmlburger/carbon-fields": "^3.6"
+    }
 }
