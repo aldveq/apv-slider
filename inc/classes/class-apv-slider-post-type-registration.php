@@ -28,7 +28,7 @@ if (!class_exists('APV_Slider_Post_Type_Registration')) :
 						'name' => 'Sliders',
 						'singular_name' => 'Slider'
 					),
-					'public' => true,
+					'public' => false,
 					'supports' => array('title', 'editor', 'thumbnail'),
 					'hierarchical' => false,
 					'show_ui' => true,
@@ -39,7 +39,7 @@ if (!class_exists('APV_Slider_Post_Type_Registration')) :
 					'can_export' => true,
 					'has_archive' => false,
 					'exclude_from_search' => false,
-					'publicly_queryable' => true,
+					'publicly_queryable' => false,
 					'show_in_rest' => true,
 					'menu_icon' => 'dashicons-images-alt2',
 				)
