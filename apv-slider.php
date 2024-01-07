@@ -33,11 +33,14 @@ if (!defined('ABSPATH')) :
 	exit;
 endif;
 
-require_once dirname( __FILE__ ) . '/vendor/autoload.php';
-require_once dirname( __FILE__ ) . '/inc/autoloader.php';
+require_once dirname(__FILE__) . '/vendor/autoload.php';
+require_once dirname(__FILE__) . '/inc/helpers/autoloader.php';
 
 use APV_Slider\Inc\APV_Slider_Init;
+APV_Slider_Init::get_instance();
 
 if (class_exists('APV_Slider_Init')) :
-	APV_Slider_Init::get_instance();
+	register_activation_hook(__FILE__, array('APV_Slider_Init', 'activate'));
+	register_deactivation_hook(__FILE__, array('APV_Slider_Init', 'deactivate'));
+	register_uninstall_hook(__FILE__, array('APV_Slider_Init', 'uninstall'));
 endif;

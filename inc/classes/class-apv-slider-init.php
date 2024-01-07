@@ -1,4 +1,7 @@
 <?php
+/**
+ * @package APV_Slider
+ */
 
 namespace APV_Slider\Inc;
 use APV_Slider\Inc\Traits\Singleton;
@@ -11,12 +14,9 @@ if (!class_exists('APV_Slider_Init')) :
 		protected function __construct()
 		{
 			$this->define_constants();
-			register_activation_hook(APV_SLIDER_URL . '/apv-slider.php', array($this, 'activate'));
-			register_deactivation_hook(APV_SLIDER_URL . '/apv-slider.php', array($this, 'deactivate'));
-			register_uninstall_hook(APV_SLIDER_URL . '/apv-slider.php', array($this, 'uninstall'));
 
 			// Other Classes Instances
-			APV_Slider_Post_Type::get_instance();
+			APV_Slider_Post_Type_Registration::get_instance();
 		}
 
 		public function define_constants()
@@ -26,18 +26,18 @@ if (!class_exists('APV_Slider_Init')) :
 			define('APV_SLIDER_VERSION', '1.0.0');
 		}
 
-		public function activate()
+		public static function activate()
 		{
 			update_option('rewrite_rules', '');
 		}
 
-		public function deactivate()
+		public static function deactivate()
 		{
 			flush_rewrite_rules();
 			unregister_post_type('apv-slider');
 		}
 
-		public function uninstall()
+		public static function uninstall()
 		{
 		}
 	}
