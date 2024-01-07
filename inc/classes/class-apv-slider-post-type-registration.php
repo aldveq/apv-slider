@@ -6,6 +6,8 @@
 
 namespace APV_Slider\Inc;
 use APV_Slider\Inc\Traits\Singleton;
+use Carbon_Fields\Container;
+use Carbon_Fields\Field;
 
 if (!class_exists('APV_Slider_Post_Type_Registration')) :
 	class APV_Slider_Post_Type_Registration
@@ -15,6 +17,7 @@ if (!class_exists('APV_Slider_Post_Type_Registration')) :
 		protected function __construct()
 		{
 			add_action('init', array($this, 'slider_post_type_register'));
+			add_action( 'carbon_fields_register_fields', array( $this, 'slider_post_type_fields' ) );
 		}
 
 		public function slider_post_type_register()
@@ -44,6 +47,21 @@ if (!class_exists('APV_Slider_Post_Type_Registration')) :
 					'menu_icon' => 'dashicons-images-alt2',
 				)
 			);
+		}
+
+		public function slider_post_type_fields() {
+			Container::make( 'post_meta', __( 'Link Options', 'apv-slider' ) )
+				->where( 'post_type', '=', 'apv-slider' )
+				->add_fields(
+					array(
+						Field::make( 'text', 'slider_link_text', __( 'Text', 'apv-slider' ) )
+							->set_width( 33 ),
+						Field::make( 'text', 'slider_link_url', __( 'URL', 'apv-slider' ) )
+							->set_width( 33 ),
+						Field::make( 'checkbox', 'slider_link_target', __( 'Open in new tab?', 'apv-slider' ) )
+							->set_width( 33 ),
+					)
+				);
 		}
 	}
 endif;

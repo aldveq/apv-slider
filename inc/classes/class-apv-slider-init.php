@@ -16,6 +16,7 @@ if (!class_exists('APV_Slider_Init')) :
 			$this->define_constants();
 
 			// Other Classes Instances
+			APV_Carbon_Fields_Setup::get_instance();
 			APV_Slider_Post_Type_Registration::get_instance();
 		}
 
