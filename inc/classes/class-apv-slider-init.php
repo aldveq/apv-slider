@@ -19,6 +19,7 @@ if (!class_exists('APV_Slider_Init')) :
 			APV_Carbon_Fields_Setup::get_instance();
 			APV_Page_Options::get_instance();
 			APV_Slider_Post_Type_Registration::get_instance();
+			APV_Slider_Shortcode::get_instance();
 		}
 
 		public function define_constants()
