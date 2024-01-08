@@ -26,8 +26,24 @@ if (!class_exists('APV_Page_Options')) :
 
 			Container::make( 'theme_options', __('Settings', 'apv-slider') )
 				->set_page_parent( $apv_slider_options_parent_item )
-				->add_fields( array( 
-					Field::make( 'text', 'apv_slider_options_text', __( 'Text', 'apv-slider' ) )
+				->set_page_file( 'apv-slider-settings' )
+				->add_tab( __( 'General Settings', 'apv-slider' ), array(
+					Field::make( 'html', 'apv_slider_general_settings_desc' )
+    					->set_html( '<h2 style="margin: 0; padding: 0;"><strong>How does it work?</strong></h2><br><p style="margin: 0; padding: 0;">Use the shortcode <code>[apv_slider]</code> to display the slider in any page, post or widget.</p>' ),
+				) )
+				->add_tab( __( 'Advanced Settings', 'apv-slider' ), array( 
+					Field::make( 'html', 'apv_slider_advanced_settings_desc' )
+    					->set_html( '<h2 style="margin: 0; padding: 0;"><strong>Other plugin settings</strong></h2>' ),
+					Field::make( 'text', 'apv_slider_advanced_settings_title', __( 'Title', 'apv-slider' ) )
+						->set_width( 33 ),
+					Field::make( 'select', 'apv_slider_advanced_settings_style', __( 'Style', 'apv-slider' ) )
+						->set_width( 33 )
+						->set_options( array(
+							'style_one' => __( 'Style One', 'apv-slider' ),
+							'style_two' => __( 'Style Two', 'apv-slider' )
+						) ),
+					Field::make( 'checkbox', 'apv_slider_advanced_settings_bullets', __( 'Display bullets?', 'apv-slider' ) )
+						->set_width( 33 ),
 				 ) );
 		}
 
