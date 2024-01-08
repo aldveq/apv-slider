@@ -42,6 +42,10 @@ if (!class_exists('APV_Slider_Shortcode')) :
 
 			ob_start();
 			APV_Views::apv_slider_shortcode_view( $ids, $orderby, $content );
+			wp_enqueue_script( 'apv-slider-flexslider-src-script' );
+			wp_enqueue_script( 'apv-slider-flexslider-script' );
+			wp_enqueue_style( 'apv-slider-flexslider-src-styles' );
+			wp_enqueue_style( 'apv-slider-flexslider-styles' );
 			return ob_get_clean();
 		}
 	}
