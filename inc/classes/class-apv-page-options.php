@@ -35,15 +35,17 @@ if (!class_exists('APV_Page_Options')) :
 					Field::make( 'html', 'apv_slider_advanced_settings_desc' )
     					->set_html( '<h2 style="margin: 0; padding: 0;"><strong>Other plugin settings</strong></h2>' ),
 					Field::make( 'text', 'apv_slider_advanced_settings_title', __( 'Title', 'apv-slider' ) )
-						->set_width( 33 ),
+						->set_width( 50 ),
 					Field::make( 'select', 'apv_slider_advanced_settings_style', __( 'Style', 'apv-slider' ) )
-						->set_width( 33 )
+						->set_width( 50 )
 						->set_options( array(
 							'style-1' => __( 'Style One', 'apv-slider' ),
 							'style-2' => __( 'Style Two', 'apv-slider' )
 						) ),
+					Field::make( 'checkbox', 'apv_slider_advanced_settings_disable_title', __( 'Disable title?', 'apv-slider' ) )
+						->set_width( 50 ),
 					Field::make( 'checkbox', 'apv_slider_advanced_settings_bullets', __( 'Disable bullets?', 'apv-slider' ) )
-						->set_width( 33 ),
+						->set_width( 50 ),
 				 ) );
 		}
 
