@@ -42,7 +42,7 @@ if (!class_exists('APV_Page_Options')) :
 							'style-1' => __( 'Style One', 'apv-slider' ),
 							'style-2' => __( 'Style Two', 'apv-slider' )
 						) ),
-					Field::make( 'checkbox', 'apv_slider_advanced_settings_bullets', __( 'Display bullets?', 'apv-slider' ) )
+					Field::make( 'checkbox', 'apv_slider_advanced_settings_bullets', __( 'Disable bullets?', 'apv-slider' ) )
 						->set_width( 33 ),
 				 ) );
 		}

@@ -61,6 +61,14 @@ if (!class_exists('APV_Slider_Init')) :
 				APV_SLIDER_VERSION, 
 				'all' 
 			);
+
+			wp_localize_script(
+				'apv-slider-flexslider-script',
+				'SLIDER_OPTIONS',
+				array(
+					'isSliderBulletsDisabled' => carbon_get_theme_option( 'apv_slider_advanced_settings_bullets' ),
+				)
+			);
 		}
 
 		public static function activate()
