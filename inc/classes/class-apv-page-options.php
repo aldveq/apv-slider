@@ -39,8 +39,8 @@ if (!class_exists('APV_Page_Options')) :
 					Field::make( 'select', 'apv_slider_advanced_settings_style', __( 'Style', 'apv-slider' ) )
 						->set_width( 33 )
 						->set_options( array(
-							'style_one' => __( 'Style One', 'apv-slider' ),
-							'style_two' => __( 'Style Two', 'apv-slider' )
+							'style-1' => __( 'Style One', 'apv-slider' ),
+							'style-2' => __( 'Style Two', 'apv-slider' )
 						) ),
 					Field::make( 'checkbox', 'apv_slider_advanced_settings_bullets', __( 'Display bullets?', 'apv-slider' ) )
 						->set_width( 33 ),

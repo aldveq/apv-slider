@@ -15,7 +15,8 @@ if (!class_exists('APV_Views')) :
 
 		public static function apv_slider_shortcode_view($ids, $orderby, $content =  null ) {
 			$apv_slider_title = '';
-			$apv_slider_title_option = carbon_get_theme_option( 'apv_slider_advanced_settings_title' ); 
+			$apv_slider_title_option = carbon_get_theme_option( 'apv_slider_advanced_settings_title' );
+			$apv_slider_style = null !== carbon_get_theme_option( 'apv_slider_advanced_settings_style' ) && !empty( carbon_get_theme_option( 'apv_slider_advanced_settings_style' ) ) ? carbon_get_theme_option( 'apv_slider_advanced_settings_style' ) : 'style-1';
 
 			if ( null !== $content 
 				&& !empty( $content ) 
@@ -26,7 +27,7 @@ if (!class_exists('APV_Views')) :
 			endif;
 			?>
 				<h3><?php echo esc_html($apv_slider_title); ?></h3>
-				<div class="mv-slider flexslider">
+				<div class="mv-slider flexslider <?php echo esc_attr( $apv_slider_style ); ?>">
 					<ul class="slides">
 						<?php
 							$apv_slides_data = self::apv_slider_get_slides($ids, $orderby);
