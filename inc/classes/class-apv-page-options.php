@@ -29,7 +29,7 @@ if (!class_exists('APV_Page_Options')) :
 				->set_page_file( 'apv-slider-settings' )
 				->add_tab( __( 'General Settings', 'apv-slider' ), array(
 					Field::make( 'html', 'apv_slider_general_settings_desc' )
-    					->set_html( '<h2 style="margin: 0; padding: 0;"><strong>How does it work?</strong></h2><br><p style="margin: 0; padding: 0;">Use the shortcode <code>[apv_slider]</code> to display the slider in any page, post or widget.</p>' ),
+    					->set_html( '<h2 style="margin: 0; padding: 0;"><strong>How does it work?</strong></h2><br><p style="margin: 0; padding: 0;">Use the shortcode <code>[apv_slider]</code> to display the slider in any page, post or widget.</p><br><p style="margin: 0; padding: 0;">Use the attribute <code>ids="1, 2, 3"</code> to display slides by slider post type id.</p><br><p style="margin: 0; padding: 0;">Use the attribute <code>orderby="rand"</code> to order the slides by an specific order (date order by default).</p>' ),
 				) )
 				->add_tab( __( 'Advanced Settings', 'apv-slider' ), array( 
 					Field::make( 'html', 'apv_slider_advanced_settings_desc' )
