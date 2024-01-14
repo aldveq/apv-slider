@@ -25,11 +25,11 @@ if (!class_exists('APV_Slider_Post_Type_Registration')) :
 			register_post_type(
 				'apv-slider',
 				array(
-					'label' => 'Slider',
-					'description' => 'Sliders',
+					'label' => esc_html__( 'Slider', 'apv-slider' ),
+					'description' => esc_html__( 'Sliders', 'apv-slider' ),
 					'labels' => array(
-						'name' => 'Sliders',
-						'singular_name' => 'Slider'
+						'name' => esc_html__( 'Sliders', 'apv-slider' ),
+						'singular_name' => esc_html__( 'Slider', 'apv-slider' )
 					),
 					'public' => false,
 					'supports' => array('title', 'editor', 'thumbnail'),
@@ -50,15 +50,15 @@ if (!class_exists('APV_Slider_Post_Type_Registration')) :
 		}
 
 		public function slider_post_type_fields() {
-			Container::make( 'post_meta', __( 'Link Options', 'apv-slider' ) )
+			Container::make( 'post_meta', esc_html__( 'Link Options', 'apv-slider' ) )
 				->where( 'post_type', '=', 'apv-slider' )
 				->add_fields(
 					array(
-						Field::make( 'text', 'slider_link_text', __( 'Text', 'apv-slider' ) )
+						Field::make( 'text', 'slider_link_text', esc_html__( 'Text', 'apv-slider' ) )
 							->set_width( 33 ),
-						Field::make( 'text', 'slider_link_url', __( 'URL', 'apv-slider' ) )
+						Field::make( 'text', 'slider_link_url', esc_html__( 'URL', 'apv-slider' ) )
 							->set_width( 33 ),
-						Field::make( 'checkbox', 'slider_link_target', __( 'Open in new tab?', 'apv-slider' ) )
+						Field::make( 'checkbox', 'slider_link_target', esc_html__( 'Open in new tab?', 'apv-slider' ) )
 							->set_width( 33 ),
 					)
 				);
