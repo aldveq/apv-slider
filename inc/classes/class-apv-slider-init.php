@@ -32,7 +32,7 @@ if (!class_exists('APV_Slider_Init')) :
 		public function apv_slider_scripts() {
 			wp_register_script( 
 				'apv-slider-flexslider-src-script', 
-				APV_SLIDER_URL . 'vendors/flexslider/jquery.flexslider-min.js', 
+				APV_SLIDER_URL . 'assets/vendors/flexslider/jquery.flexslider-min.js', 
 				array( 'jquery' ), 
 				APV_SLIDER_VERSION,
 				true
@@ -40,7 +40,7 @@ if (!class_exists('APV_Slider_Init')) :
 
 			wp_register_script( 
 				'apv-slider-flexslider-script', 
-				APV_SLIDER_URL . 'vendors/flexslider/flexslider.js', 
+				APV_SLIDER_URL . 'assets/vendors/flexslider/flexslider.js', 
 				array( 'jquery' ), 
 				APV_SLIDER_VERSION,
 				true
@@ -48,7 +48,7 @@ if (!class_exists('APV_Slider_Init')) :
 
 			wp_register_style( 
 				'apv-slider-flexslider-src-styles',
-				APV_SLIDER_URL . 'vendors/flexslider/flexslider.css', 
+				APV_SLIDER_URL . 'assets/vendors/flexslider/flexslider.css', 
 				array(), 
 				APV_SLIDER_VERSION, 
 				'all' 
