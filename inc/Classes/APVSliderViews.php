@@ -4,15 +4,12 @@
  * @package APV_Slider
  */
 
-namespace APV_Slider\Inc;
-use APV_Slider\Inc\Traits\Singleton;
+namespace APVSliderPlugin\Classes;
 use \WP_Query;
 
-if (!class_exists('APV_Views')) :
-	class APV_Views
+if (!class_exists('APVSliderViews')) :
+	class APVSliderViews extends APVSliderSingleton
 	{
-		use Singleton;
-
 		public static function apv_slider_shortcode_view($ids, $orderby, $content =  null ) {
 			$apv_slider_title = '';
 			$apv_slider_title_option = carbon_get_theme_option( 'apv_slider_advanced_settings_title' );

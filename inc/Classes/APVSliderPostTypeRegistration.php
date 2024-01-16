@@ -4,16 +4,13 @@
  * @package APV_Slider
  */
 
-namespace APV_Slider\Inc;
-use APV_Slider\Inc\Traits\Singleton;
+namespace APVSliderPlugin\Classes;
 use Carbon_Fields\Container;
 use Carbon_Fields\Field;
 
-if (!class_exists('APV_Slider_Post_Type_Registration')) :
-	class APV_Slider_Post_Type_Registration
+if (!class_exists('APVSliderPostTypeRegistration')) :
+	class APVSliderPostTypeRegistration extends APVSliderSingleton
 	{
-		use Singleton;
-
 		protected function __construct()
 		{
 			add_action('init', array($this, 'slider_post_type_register'));

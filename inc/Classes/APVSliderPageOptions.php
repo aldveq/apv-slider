@@ -4,17 +4,13 @@
  * @package APV_Slider
  */
 
-namespace APV_Slider\Inc;
-
-use APV_Slider\Inc\Traits\Singleton;
+namespace APVSliderPlugin\Classes;
 use Carbon_Fields\Container;
 use Carbon_Fields\Field;
 
-if (!class_exists('APV_Page_Options')) :
-	class APV_Page_Options
+if (!class_exists('APVSliderPageOptions')) :
+	class APVSliderPageOptions extends APVSliderSingleton
 	{
-		use Singleton;
-
 		protected function __construct()
 		{
 			add_action('carbon_fields_register_fields', array($this, 'apv_slider_plugin_options'));

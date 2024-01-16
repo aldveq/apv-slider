@@ -4,14 +4,11 @@
  * @package APV_Slider
  */
 
-namespace APV_Slider\Inc;
-use APV_Slider\Inc\Traits\Singleton;
+namespace APVSliderPlugin\Classes;
 
-if (!class_exists('APV_Slider_Shortcode')) :
-	class APV_Slider_Shortcode
+if (!class_exists('APVSliderShortcode')) :
+	class APVSliderShortcode extends APVSliderSingleton
 	{
-		use Singleton;
-
 		protected function __construct()
 		{
 			add_action('init', array($this, 'apv_slider_shortcode_setup'));
@@ -41,7 +38,7 @@ if (!class_exists('APV_Slider_Shortcode')) :
 			endif; 
 
 			ob_start();
-			APV_Views::apv_slider_shortcode_view( $ids, $orderby, $content );
+			APVSliderViews::apv_slider_shortcode_view( $ids, $orderby, $content );
 			wp_enqueue_script( 'apv-slider-flexslider-src-script' );
 			wp_enqueue_script( 'apv-slider-flexslider-script' );
 			wp_enqueue_style( 'apv-slider-flexslider-src-styles' );

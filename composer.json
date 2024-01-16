@@ -4,7 +4,7 @@
     "type": "library",
     "autoload": {
         "psr-4": {
-            "Aldveq93\\ApvSlider\\": "src/"
+            "APVSliderPlugin\\": "inc/"
         }
     },
     "authors": [

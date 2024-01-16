@@ -3,24 +3,21 @@
  * @package APV_Slider
  */
 
-namespace APV_Slider\Inc;
-use APV_Slider\Inc\Traits\Singleton;
+namespace APVSliderPlugin\Classes;
 
-if (!class_exists('APV_Slider_Init')) :
-	class APV_Slider_Init
+if (!class_exists('APVSliderInit')) :
+	class APVSliderInit extends APVSliderSingleton
 	{
-		use Singleton;
-
-		protected function __construct()
+		public function __construct()
 		{
 			$this->define_constants();
 			add_action( 'wp_enqueue_scripts', array( $this, 'apv_slider_scripts' ) );
 
 			// Other Classes Instances
-			APV_Carbon_Fields_Setup::get_instance();
-			APV_Page_Options::get_instance();
-			APV_Slider_Post_Type_Registration::get_instance();
-			APV_Slider_Shortcode::get_instance();
+			APVSliderCarbonFieldsSetup::get_instance();
+			APVSliderPageOptions::get_instance();
+			APVSliderPostTypeRegistration::get_instance();
+			APVSliderShortcode::get_instance();
 		}
 
 		public function define_constants()
