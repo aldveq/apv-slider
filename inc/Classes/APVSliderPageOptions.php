@@ -33,18 +33,26 @@ if (!class_exists('APVSliderPageOptions')) :
 				->add_tab(esc_html__('Advanced Settings', 'apv-slider'), array(
 					Field::make('html', 'apv_slider_advanced_settings_desc')
 						->set_html('<h2 style="margin: 0; padding: 0;"><strong>'. esc_html__('Other plugin settings', 'apv-slider') .'</strong></h2>'),
-					Field::make('text', 'apv_slider_advanced_settings_title', esc_html__('Title', 'apv-slider'))
+					Field::make('checkbox', 'apv_slider_advanced_settings_disable_title', esc_html__('Disable title?', 'apv-slider'))
 						->set_width(50),
-					Field::make('select', 'apv_slider_advanced_settings_style', esc_html__('Style', 'apv-slider'))
+					Field::make('text', 'apv_slider_advanced_settings_title', esc_html__('Title', 'apv-slider'))
 						->set_width(50)
+						 ->set_conditional_logic( array(
+							'relation' => 'AND',
+							array(
+								'field' => 'apv_slider_advanced_settings_disable_title',
+								'value' => false,
+								'compare' => '=',
+							)
+						) ),
+					Field::make('checkbox', 'apv_slider_advanced_settings_bullets', esc_html__('Disable bullets?', 'apv-slider'))
+						->set_width( 50 ),
+					Field::make('select', 'apv_slider_advanced_settings_style', esc_html__('Styles', 'apv-slider'))
+						->set_width( 50 )
 						->set_options(array(
 							'style-1' => esc_html__('Style One', 'apv-slider'),
 							'style-2' => esc_html__('Style Two', 'apv-slider')
 						)),
-					Field::make('checkbox', 'apv_slider_advanced_settings_disable_title', esc_html__('Disable title?', 'apv-slider'))
-						->set_width(50),
-					Field::make('checkbox', 'apv_slider_advanced_settings_bullets', esc_html__('Disable bullets?', 'apv-slider'))
-						->set_width(50),
 				));
 		}
 
