@@ -81,6 +81,20 @@ if (!class_exists('APVSliderInit')) :
 
 		public static function uninstall()
 		{
+			delete_option( 'apv_slider_advanced_settings_disable_title' );
+			delete_option( 'apv_slider_advanced_settings_title' );
+			delete_option( 'apv_slider_advanced_settings_bullets' );
+			delete_option( 'apv_slider_advanced_settings_style' );
+
+			$apv_slider_posts = get_posts( array(
+				'post_type' => 'apv-slider',
+				'number_posts' => -1,
+				'post_status' => 'any'
+			) );
+
+			foreach ($apv_slider_posts as $apv_post):
+				wp_delete_post( $apv_post->ID, true );
+			endforeach;
 		}
 	}
 endif;
