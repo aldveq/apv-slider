@@ -42,5 +42,4 @@ APVSliderInit::get_instance();
 if (class_exists('APVSliderInit')) :
 	register_activation_hook(__FILE__, array('APVSliderInit', 'activate'));
 	register_deactivation_hook(__FILE__, array('APVSliderInit', 'deactivate'));
-	register_uninstall_hook(__FILE__, array('APVSliderInit', 'uninstall'));
 endif;
