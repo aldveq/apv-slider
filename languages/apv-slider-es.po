@@ -4,159 +4,131 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: APV "
-"Slider v1.0.0\n"
-"Report-Msgid-Bugs-To: "
-"Translator Name "
-"<translations@example."
-"com>\n"
-"POT-Creation-Date: "
-"2024-01-14 16:09-0600\n"
+"Project-Id-Version: APV Slider v1.0.0\n"
+"Report-Msgid-Bugs-To: Translator Name <translations@example.com>\n"
+"POT-Creation-Date: 2024-01-14 16:09-0600\n"
 "PO-Revision-Date: \n"
-"Last-Translator: Your "
-"Name <you@example.com>\n"
-"Language-Team: APV "
-"Slider Team\n"
-"Language: en_US\n"
+"Last-Translator: \n"
+"Language-Team: APV Slider Team\n"
+"Language: es\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/"
-"plain; charset=UTF-8\n"
-"Content-Transfer-"
-"Encoding: 8bit\n"
-"Plural-Forms: "
-"nplurals=2; plural=n != "
-"1;\n"
-"X-Textdomain-Support: "
-"yesX-Generator: Poedit "
-"1.6.4\n"
-"X-Poedit-SourceCharset: "
-"UTF-8\n"
-"X-Poedit-KeywordsList: "
-"__;_e;esc_html_e;"
-"esc_html_x:1,2c;"
-"esc_html__;esc_attr_e;"
-"esc_attr_x:1,2c;"
-"esc_attr__;_ex:1,2c;"
-"_nx:4c,1,2;"
-"_nx_noop:4c,1,2;_x:1,2c;"
-"_n:1,2;_n_noop:1,2;"
-"__ngettext:1,2;"
-"__ngettext_noop:1,2;_c,"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Textdomain-Support: yesX-Generator: Poedit 1.6.4\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;esc_html_e;esc_html_x:1,2c;esc_html__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_attr__;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;"
+"_x:1,2c;_n:1,2;_n_noop:1,2;__ngettext:1,2;__ngettext_noop:1,2;_c,"
 "_nc:4c,1,2\n"
 "X-Poedit-Basepath: ..\n"
-"X-Generator: Poedit "
-"3.4.2\n"
-"X-Poedit-"
-"SearchPath-0: .\n"
+"X-Generator: Poedit 3.4.2\n"
+"X-Poedit-SearchPath-0: .\n"
 
 #: inc/classes/class-apv-page-options.php:26
 msgid "APV Slider"
-msgstr ""
+msgstr "APV Slider"
 
 #: inc/classes/class-apv-page-options.php:30
 msgid "Settings"
-msgstr ""
+msgstr "Ajustes"
 
 #: inc/classes/class-apv-page-options.php:33
 msgid "General Settings"
-msgstr ""
+msgstr "Ajustes generales"
 
 #: inc/classes/class-apv-page-options.php:35
 msgid "How does it work?"
-msgstr ""
+msgstr "¿Cómo funciona?"
 
 #: inc/classes/class-apv-page-options.php:35
 msgid ""
-"Use the shortcode "
-"<code>[apv_slider]</"
-"code> to display the "
-"slider in any page, post "
-"or widget."
+"Use the shortcode <code>[apv_slider]</code> to display the slider in any "
+"page, post or widget."
 msgstr ""
+"Utiliza el shortcode <code>[apv_slider]</code> para mostrar el slider en "
+"cualquier página, post o widget."
 
 #: inc/classes/class-apv-page-options.php:35
 msgid ""
-"Use the attribute "
-"<code>ids=\"1, 2, 3\"</"
-"code> to display slides "
-"by slider post type id."
+"Use the attribute <code>ids=\"1, 2, 3\"</code> to display slides by slider "
+"post type id."
 msgstr ""
+"Utiliza el atributo <code>ids=\"1, 2, 3\"</code> para mostrar los slides "
+"por id."
 
 #: inc/classes/class-apv-page-options.php:35
 msgid ""
-"Use the attribute "
-"<code>orderby=\"rand\"</"
-"code> to order the "
-"slides by an specific "
-"order (date order by "
-"default)."
+"Use the attribute <code>orderby=\"rand\"</code> to order the slides by an "
+"specific order (date order by default)."
 msgstr ""
+"Utiliza el atributo <code>orderby=\"rand\"</code> para ordenar los slides "
+"(fecha por defecto)."
 
 #: inc/classes/class-apv-page-options.php:37
 msgid "Advanced Settings"
-msgstr ""
+msgstr "Ajustes avanzados"
 
 #: inc/classes/class-apv-page-options.php:39
-msgid ""
-"Other plugin settings"
-msgstr ""
+msgid "Other plugin settings"
+msgstr "Otros ajustes del plugin"
 
 #: inc/classes/class-apv-page-options.php:40
 msgid "Title"
-msgstr ""
+msgstr "Título"
 
 #: inc/classes/class-apv-page-options.php:42
 msgid "Styles"
-msgstr ""
+msgstr "Estilos"
 
 #: inc/classes/class-apv-page-options.php:45
 msgid "Style One"
-msgstr ""
+msgstr "Estilo Uno"
 
 #: inc/classes/class-apv-page-options.php:46
 msgid "Style Two"
-msgstr ""
+msgstr "Estilo Dos"
 
 #: inc/classes/class-apv-page-options.php:48
 msgid "Disable title?"
-msgstr ""
+msgstr "¿Deshabilitar título?"
 
 #: inc/classes/class-apv-page-options.php:50
 msgid "Disable bullets?"
-msgstr ""
+msgstr "¿Deshabilitar navegación?"
 
 #: inc/classes/class-apv-page-options.php:59
 #: inc/classes/class-apv-page-options.php:60
 msgid "Manage Slides"
-msgstr ""
+msgstr "Administrar slides"
 
 #: inc/classes/class-apv-page-options.php:69
 #: inc/classes/class-apv-page-options.php:70
 msgid "Add New Slide"
-msgstr ""
+msgstr "Agregar Slide"
 
 #: inc/classes/class-apv-slider-post-type-registration.php:28
 #: inc/classes/class-apv-slider-post-type-registration.php:32
 msgid "Slider"
-msgstr ""
+msgstr "Slider"
 
 #: inc/classes/class-apv-slider-post-type-registration.php:29
 #: inc/classes/class-apv-slider-post-type-registration.php:31
 msgid "Sliders"
-msgstr ""
+msgstr "Sliders"
 
 #: inc/classes/class-apv-slider-post-type-registration.php:53
 msgid "Link Options"
-msgstr ""
+msgstr "Opciones de link"
 
 #: inc/classes/class-apv-slider-post-type-registration.php:57
 msgid "Text"
-msgstr ""
+msgstr "Texto"
 
 #: inc/classes/class-apv-slider-post-type-registration.php:59
 msgid "URL"
-msgstr ""
+msgstr "URL"
 
 #: inc/classes/class-apv-slider-post-type-registration.php:61
 msgid "Open in new tab?"
-msgstr ""
+msgstr "¿Abrir en nuevo tab?"
