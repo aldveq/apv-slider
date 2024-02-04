@@ -1,7 +1,7 @@
 /* Flex Slider */
 
 .mv-slider {
-	position  : relative;
+	position: relative;
 	overflow-x: hidden;
 }
 
@@ -10,23 +10,23 @@
 }
 
 .mv-slider.flexslider .slides img {
-	max-height     : 500px;
-	object-fit     : cover;
+	max-height: 500px;
+	object-fit: cover;
 	object-position: center;
 }
 
 .mv-slider .img-fluid {
 	max-width: 100%;
-	height   : auto;
+	height: auto;
 }
 
 .mv-slider .mvs-container {
-	max-width    : 1140px;
-	width        : 100%;
+	max-width: 1140px;
+	width: 100%;
 	padding-right: 50px;
-	padding-left : 50px;
-	margin-right : auto;
-	margin-left  : auto;
+	padding-left: 50px;
+	margin-right: auto;
+	margin-left: auto;
 }
 
 .mv-slider .flex-control-nav {
@@ -38,10 +38,10 @@
 }
 
 .mv-slider .slider-details-container {
-	color    : #FFF;
-	top      : 50%;
+	color: #fff;
+	top: 50%;
 	transform: translateY(-50%);
-	position : absolute;
+	position: absolute;
 }
 
 .mv-slider .slider-details-container .subtitle {
@@ -49,16 +49,16 @@
 }
 
 .mv-slider .slider-details-container .slider-title {
-	color      : #FFF;
+	color: #fff;
 	font-weight: 700;
 }
 
 .mv-slider .slider-details-container a {
-	color          : #fff;
-	border-radius  : 5px;
-	text-transform : uppercase;
-	padding        : 5px 25px;
-	display        : inline-block;
+	color: #fff;
+	border-radius: 5px;
+	text-transform: uppercase;
+	padding: 5px 25px;
+	display: inline-block;
 	text-decoration: none;
 }
 
@@ -102,12 +102,12 @@
 
 .mv-slider.style-2 .flex-control-paging li a.flex-active {
 	background: rgb(2, 182, 14) !important;
-	width     : 25px;
+	width: 25px;
 }
 
 .mv-slider.style-2 .flex-control-paging li a {
-	background   : rgb(247, 247, 247);
-	height       : 10px;
-	width        : 15px;
+	background: rgb(247, 247, 247);
+	height: 10px;
+	width: 15px;
 	border-radius: 0;
 }
