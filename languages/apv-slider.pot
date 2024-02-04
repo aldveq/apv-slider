@@ -34,12 +34,16 @@ msgstr ""
 msgid "APV Slider"
 msgstr ""
 
-#: inc/Classes/APVSliderPageOptions.php:48
+#: inc/Classes/APVSliderPageOptions.php:39
 msgid "Disable bullets?"
 msgstr ""
 
-#: inc/Classes/APVSliderPageOptions.php:36
+#: inc/Classes/APVSliderPageOptions.php:37
 msgid "Disable title?"
+msgstr ""
+
+#: inc/Classes/APVSliderPageOptions.php:41
+msgid "Disable nav arrows?"
 msgstr ""
 
 #. Description of the plugin

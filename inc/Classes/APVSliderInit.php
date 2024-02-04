@@ -64,6 +64,7 @@ if (!class_exists('APVSliderInit')) :
 				'SLIDER_OPTIONS',
 				array(
 					'isSliderBulletsDisabled' => carbon_get_theme_option('apv_slider_advanced_settings_bullets'),
+					'isSliderNavArrowsDisabled' => carbon_get_theme_option('apv_slider_advanced_settings_nav_arrows')
 				)
 			);
 		}

@@ -1,7 +1,8 @@
 /* Flex Slider */
 
 .mv-slider {
-	position: relative;
+	position  : relative;
+	overflow-x: hidden;
 }
 
 .mv-slider.flexslider {
@@ -26,10 +27,6 @@
 	padding-left : 50px;
 	margin-right : auto;
 	margin-left  : auto;
-}
-
-.mv-slider .flex-direction-nav {
-	display: none !important;
 }
 
 .mv-slider .flex-control-nav {

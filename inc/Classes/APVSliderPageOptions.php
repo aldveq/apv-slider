@@ -5,6 +5,7 @@
  */
 
 namespace APVSliderPlugin\Classes;
+
 use Carbon_Fields\Container;
 use Carbon_Fields\Field;
 
@@ -28,27 +29,29 @@ if (!class_exists('APVSliderPageOptions')) :
 				->set_page_file('apv-slider-settings')
 				->add_tab(esc_html__('General Settings', 'apv-slider'), array(
 					Field::make('html', 'apv_slider_general_settings_desc')
-						->set_html('<h2 style="margin: 0; padding: 0;"><strong>'.esc_html__('How does it work?', 'apv-slider').'</strong></h2><br><p style="margin: 0; padding: 0;">'.wp_kses(__( 'Use the shortcode <code>[apv_slider]</code> to display the slider in any page, post or widget.', 'apv-slider' ), array( 'code' => array() )).'</p><br><p style="margin: 0; padding: 0;">'.wp_kses(__( 'Use the attribute <code>ids="1, 2, 3"</code> to display slides by slider post type id.', 'apv-slider' ), array( 'code' => array() )).'</p><br><p style="margin: 0; padding: 0;">'.wp_kses(__( 'Use the attribute <code>orderby="rand"</code> to order the slides by an specific order (date order by default).', 'apv-slider' ), array( 'code' => array() )).'</p>'),
+						->set_html('<h2 style="margin: 0; padding: 0;"><strong>' . esc_html__('How does it work?', 'apv-slider') . '</strong></h2><br><p style="margin: 0; padding: 0;">' . wp_kses(__('Use the shortcode <code>[apv_slider]</code> to display the slider in any page, post or widget.', 'apv-slider'), array('code' => array())) . '</p><br><p style="margin: 0; padding: 0;">' . wp_kses(__('Use the attribute <code>ids="1, 2, 3"</code> to display slides by slider post type id.', 'apv-slider'), array('code' => array())) . '</p><br><p style="margin: 0; padding: 0;">' . wp_kses(__('Use the attribute <code>orderby="rand"</code> to order the slides by an specific order (date order by default).', 'apv-slider'), array('code' => array())) . '</p>'),
 				))
 				->add_tab(esc_html__('Advanced Settings', 'apv-slider'), array(
 					Field::make('html', 'apv_slider_advanced_settings_desc')
-						->set_html('<h2 style="margin: 0; padding: 0;"><strong>'. esc_html__('Other plugin settings', 'apv-slider') .'</strong></h2>'),
+						->set_html('<h2 style="margin: 0; padding: 0;"><strong>' . esc_html__('Other plugin settings', 'apv-slider') . '</strong></h2>'),
 					Field::make('checkbox', 'apv_slider_advanced_settings_disable_title', esc_html__('Disable title?', 'apv-slider'))
-						->set_width(50),
+						->set_width(33),
+					Field::make('checkbox', 'apv_slider_advanced_settings_bullets', esc_html__('Disable bullets?', 'apv-slider'))
+						->set_width(33),
+					Field::make('checkbox', 'apv_slider_advanced_settings_nav_arrows', esc_html__('Disable nav arrows?', 'apv-slider'))
+						->set_width(33),
 					Field::make('text', 'apv_slider_advanced_settings_title', esc_html__('Title', 'apv-slider'))
 						->set_width(50)
-						 ->set_conditional_logic( array(
+						->set_conditional_logic(array(
 							'relation' => 'AND',
 							array(
 								'field' => 'apv_slider_advanced_settings_disable_title',
 								'value' => false,
 								'compare' => '=',
 							)
-						) ),
-					Field::make('checkbox', 'apv_slider_advanced_settings_bullets', esc_html__('Disable bullets?', 'apv-slider'))
-						->set_width( 50 ),
+						)),
 					Field::make('select', 'apv_slider_advanced_settings_style', esc_html__('Styles', 'apv-slider'))
-						->set_width( 50 )
+						->set_width(50)
 						->set_options(array(
 							'style-1' => esc_html__('Style One', 'apv-slider'),
 							'style-2' => esc_html__('Style Two', 'apv-slider')

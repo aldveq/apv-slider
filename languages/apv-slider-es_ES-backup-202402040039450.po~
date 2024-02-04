@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: APV Slider\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-01-29 17:46+0000\n"
-"PO-Revision-Date: 2024-02-04 00:39+0000\n"
+"PO-Revision-Date: 2024-02-04 00:34+0000\n"
 "Last-Translator: \n"
 "Language-Team: Spanish (Spain)\n"
 "Language: es_ES\n"
@@ -18,127 +18,122 @@ msgstr ""
 #: inc/Classes/APVSliderPageOptions.php:73
 #: inc/Classes/APVSliderPageOptions.php:74
 msgid "Add New Slide"
-msgstr "Agregar nuevo slide"
+msgstr ""
 
 #: inc/Classes/APVSliderPageOptions.php:33
 msgid "Advanced Settings"
-msgstr "Ajustes Avanzados"
+msgstr ""
 
 #. Author of the plugin
 msgid "Aldo Paz Velasquez"
-msgstr "Aldo Paz Velasquez"
+msgstr ""
 
 #. Name of the plugin
 #: inc/Classes/APVSliderPageOptions.php:22
 msgid "APV Slider"
-msgstr "APV Slider"
+msgstr ""
 
 #: inc/Classes/APVSliderPageOptions.php:39
 msgid "Disable bullets?"
-msgstr "¿Deshabilitar navegación inferior?"
-
-#: inc/Classes/APVSliderPageOptions.php:41
-msgid "Disable nav arrows?"
-msgstr "¿Deshabilitar navegación de flechas?"
+msgstr ""
 
 #: inc/Classes/APVSliderPageOptions.php:37
 msgid "Disable title?"
-msgstr "¿Deshabilitar título?"
+msgstr ""
+
+#: inc/Classes/APVSliderPageOptions.php:41
+msgid "Disable nav arrows?"
+msgstr ""
 
 #. Description of the plugin
 msgid "Free WordPress Slider Plugin."
-msgstr "Complemento deslizante gratuito de WordPress."
+msgstr ""
 
 #: inc/Classes/APVSliderPageOptions.php:29
 msgid "General Settings"
-msgstr "Ajustes Generales"
+msgstr ""
 
 #: inc/Classes/APVSliderPageOptions.php:31
 msgid "How does it work?"
-msgstr "¿Cómo funciona?"
+msgstr ""
 
 #. Author URI of the plugin
 msgid "https://apazvelasquez.com"
-msgstr "https://apazvelasquez.com"
+msgstr ""
 
 #. URI of the plugin
 msgid "https://wordpress.org/plugins/avp-slider"
-msgstr "https://wordpress.org/plugins/avp-slider"
+msgstr ""
 
 #: inc/Classes/APVSliderPostTypeRegistration.php:50
 msgid "Link Options"
-msgstr "Opciones de enlace"
+msgstr ""
 
 #: inc/Classes/APVSliderPageOptions.php:63
 #: inc/Classes/APVSliderPageOptions.php:64
 msgid "Manage Slides"
-msgstr "Administrar slides"
+msgstr ""
 
 #: inc/Classes/APVSliderPostTypeRegistration.php:58
 msgid "Open in new tab?"
-msgstr "¿Abrir en nuevo tab?"
+msgstr ""
 
 #: inc/Classes/APVSliderPageOptions.php:35
 msgid "Other plugin settings"
-msgstr "Otros ajustes del complemento"
+msgstr ""
 
 #: inc/Classes/APVSliderPageOptions.php:26
 msgid "Settings"
-msgstr "Ajustes"
+msgstr ""
 
 #: inc/Classes/APVSliderPostTypeRegistration.php:25
 #: inc/Classes/APVSliderPostTypeRegistration.php:29
 msgid "Slider"
-msgstr "Deslizante"
+msgstr ""
 
 #: inc/Classes/APVSliderPostTypeRegistration.php:26
 #: inc/Classes/APVSliderPostTypeRegistration.php:28
 msgid "Sliders"
-msgstr "Deslizantes"
+msgstr ""
 
 #: inc/Classes/APVSliderPageOptions.php:53
 msgid "Style One"
-msgstr "Estilo Uno"
+msgstr ""
 
 #: inc/Classes/APVSliderPageOptions.php:54
 msgid "Style Two"
-msgstr "Estilo Dos"
+msgstr ""
 
 #: inc/Classes/APVSliderPageOptions.php:50
 msgid "Styles"
-msgstr "Estilos"
+msgstr ""
 
 #: inc/Classes/APVSliderPostTypeRegistration.php:54
 msgid "Text"
-msgstr "Texto"
+msgstr ""
 
 #: inc/Classes/APVSliderPageOptions.php:38
 msgid "Title"
-msgstr "Título"
+msgstr ""
 
 #: inc/Classes/APVSliderPostTypeRegistration.php:56
 msgid "URL"
-msgstr "URL"
+msgstr ""
 
 #: inc/Classes/APVSliderPageOptions.php:31
 msgid ""
 "Use the attribute <code>ids=\"1, 2, 3\"</code> to display slides by slider "
 "post type id."
 msgstr ""
-"Utiliza el atributo <code>ids=\"1, 2, 3\"</code> para mostrar slides por id."
 
 #: inc/Classes/APVSliderPageOptions.php:31
 msgid ""
 "Use the attribute <code>orderby=\"rand\"</code> to order the slides by an "
 "specific order (date order by default)."
 msgstr ""
-"Utiliza el atributo <code>orderby=\"rand\"</code> para ordenar slides por "
-"orden específico (fecha por defecto)."
 
 #: inc/Classes/APVSliderPageOptions.php:31
 msgid ""
 "Use the shortcode <code>[apv_slider]</code> to display the slider in any "
 "page, post or widget."
 msgstr ""
-"Utiliza el código abreviado <code>[apv_slider]</code> para mostrar el "
-"control deslizante en cualquier página, post o widget."
