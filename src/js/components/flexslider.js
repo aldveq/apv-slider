@@ -1,9 +1,11 @@
-jQuery(window).load(function () {
-	jQuery('.flexslider').flexslider({
-		animation: "slide",
+/*global jQuery, SLIDER_OPTIONS*/
+
+jQuery( window ).load( function() {
+	jQuery( '.flexslider' ).flexslider( {
+		animation: 'slide',
 		touch: true,
-		directionNav: Boolean(SLIDER_OPTIONS.isSliderNavArrowsDisabled) ? false : true,
+		directionNav: Boolean( SLIDER_OPTIONS.isSliderNavArrowsDisabled ) ? false : true,
 		smoothHeight: true,
-		controlNav: Boolean(SLIDER_OPTIONS.isSliderBulletsDisabled) ? false : true,
-	});
-});
+		controlNav: Boolean( SLIDER_OPTIONS.isSliderBulletsDisabled ) ? false : true,
+	} );
+} );
