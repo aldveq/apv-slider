@@ -1,49 +1,94 @@
 <?php
 
 /**
- * @package APV_Slider
+ * APV Slider Shortcode Class
+ *
+ * This class loads the Carbon Fields Library.
+ *
+ * PHP version 8
+ *
+ * @category Plugins
+ * @package  WordPress
+ * @author   Aldo Paz Velasquez <aldveq80@gmail.com>
+ * @license  GPL-2.0-or-later https://www.gnu.org/licenses/gpl-2.0.txt
+ * @link     https://developer.wordpress.org/plugins/plugin-basics/
  */
 
 namespace APVSliderPlugin\Classes;
 
-if (!class_exists('APVSliderShortcode')) :
-	class APVSliderShortcode extends APVSliderSingleton
-	{
-		protected function __construct()
-		{
-			add_action('init', array($this, 'apv_slider_shortcode_setup'));
-		}
+if (! class_exists('APVSliderShortcode') ) {
+    /**
+     * APV Slider Shortcode class
+     *
+     * @category Plugins
+     * @package  WordPress
+     * @author   Aldo Paz Velasquez <aldveq80@gmail.com>
+     * @license  GPL-2.0-or-later https://www.gnu.org/licenses/gpl-2.0.txt
+     * @link     https://developer.wordpress.org/plugins/plugin-basics/
+     * @see      APVSliderSingleton
+     */
+    class APVSliderShortcode extends APVSliderSingleton
+    {
 
-		public function apv_slider_shortcode_setup() {
-			add_shortcode( 'apv_slider', array( $this, 'apv_slider_shortcode' ) );
-		}
+        /**
+         * APV Slider Shortcode Construct function
+         */
+        protected function __construct()
+        {
+            add_action('init', array( $this, 'apvSliderShortcodeSetup' ));
+        }
 
-		public function apv_slider_shortcode( $atts = array(), $content = null, $tag = '' ) {
-			// Making all attributes lower caase
-			$atts = array_change_key_case( (array) $atts, CASE_LOWER );
+        /**
+         * APV Slider Shortcode Setup function
+         *
+         * @return void
+         */
+        public function apvSliderShortcodeSetup()
+        {
+            add_shortcode('apv_slider', array( $this, 'apvSliderShortcode' ));
+        }
 
-			// Extracting every single shortcode attribute to handle it by case
-			extract( shortcode_atts(
-				array(
-					'ids' => '',
-					'orderby' => 'date'
-				),
-				$atts,
-				$tag
-			) );
+        /**
+         * APV Slider Shortcode function
+         *
+         * @param array  $atts    Shortcode Attributes
+         * @param string $content Content of the Shortcode
+         * @param string $tag     Shortcode tag
+         *
+         * @return void
+         */
+        public function apvSliderShortcode( 
+            $atts = array(), 
+            $content = null, 
+            $tag = '' 
+        ) {
+            // Making all attributes lower caase
+            $atts = array_change_key_case((array) $atts, CASE_LOWER);
 
-			// Making sure ids are positive integer values
-			if ( !empty( $ids ) ):
-				$ids = array_map( 'absint', explode( ',', $ids ) );
-			endif; 
+            // Extracting every single shortcode attribute to handle it by case
+            extract(
+                shortcode_atts(
+                    array(
+                    'ids'     => '',
+                    'orderby' => 'date',
+                    ),
+                    $atts,
+                    $tag
+                )
+            );
 
-			ob_start();
-			APVSliderViews::apv_slider_shortcode_view( $ids, $orderby, $content );
-			wp_enqueue_script( 'apv-slider-flexslider-src-script' );
-			wp_enqueue_script( 'apv-slider-flexslider-script' );
-			wp_enqueue_style( 'apv-slider-flexslider-src-styles' );
-			wp_enqueue_style( 'apv-slider-flexslider-styles' );
-			return ob_get_clean();
-		}
-	}
-endif;
+            // Making sure ids are positive integer values
+            if (! empty($ids) ) :
+                $ids = array_map('absint', explode(',', $ids));
+            endif;
+
+            ob_start();
+            APVSliderViews::apvSliderShortcodeView($ids, $orderby, $content);
+            wp_enqueue_script('apv-slider-flexslider-src-script');
+            wp_enqueue_script('apv-slider-flexslider-script');
+            wp_enqueue_style('apv-slider-flexslider-src-styles');
+            wp_enqueue_style('apv-slider-flexslider-styles');
+            return ob_get_clean();
+        }
+    }
+}

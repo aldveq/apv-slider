@@ -37,7 +37,7 @@ use APVSliderPlugin\Classes\APVSliderInit;
 
 require_once dirname(__FILE__) . '/vendor/autoload.php';
 
-APVSliderInit::get_instance();
+APVSliderInit::getInstance();
 
 if (class_exists('APVSliderInit')) :
 	register_activation_hook(__FILE__, array('APVSliderInit', 'activate'));

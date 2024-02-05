@@ -12,8 +12,8 @@
 	"lint:scss:fix": "wp-scripts lint-style 'src/scss/**/*.scss' --fix",
 	"lint:js": "wp-scripts lint-js 'src/**/*.js'",
 	"lint:js:fix": "wp-scripts lint-js 'src/**/*.js' --fix",
-	"lint:php": "./vendor/bin/phpcs --standard=PSR12",
-    "lint:php:fix": "./vendor/bin/phpcbf --standard=PSR12",
+	"lint:php": "./vendor/bin/phpcs ./inc/Classes",
+    "lint:php:fix": "./vendor/bin/phpcbf ./inc/Classes",
 	"release": "standard-version",
 	"bundle": "dir-archiver --src . --dest ../apv-slider.zip --exclude .DS_Store .stylelintrc.json .eslintrc .git .gitattributes .github .gitignore README.md composer.json composer.lock node_modules src package-lock.json package.json .travis.yml phpcs.xml.dist sass style.css.map yarn.lock"
   },

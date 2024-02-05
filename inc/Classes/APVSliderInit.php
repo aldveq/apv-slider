@@ -1,83 +1,137 @@
 <?php
 
 /**
- * @package APV_Slider
+ * APV Slider Init Class
+ *
+ * This class is the entry point of the APV Slider Plugin
+ *
+ * PHP version 8
+ *
+ * @category Plugins
+ * @package  WordPress
+ * @author   Aldo Paz Velasquez <aldveq80@gmail.com>
+ * @license  GPL-2.0-or-later https://www.gnu.org/licenses/gpl-2.0.txt
+ * @link     https://developer.wordpress.org/plugins/plugin-basics/
  */
 
 namespace APVSliderPlugin\Classes;
 
-if (!class_exists('APVSliderInit')) :
-	class APVSliderInit extends APVSliderSingleton
-	{
-		public function __construct()
-		{
-			$this->define_constants();
-			add_action('after_setup_theme', array($this, 'apv_slider_load_textdomain'));
-			add_action('wp_enqueue_scripts', array($this, 'apv_slider_scripts'));
+if (! class_exists('APVSliderInit') ) {
+    /**
+     * APV Slider Init class
+     *
+     * @category Plugins
+     * @package  WordPress
+     * @author   Aldo Paz Velasquez <aldveq80@gmail.com>
+     * @license  GPL-2.0-or-later https://www.gnu.org/licenses/gpl-2.0.txt
+     * @link     https://developer.wordpress.org/plugins/plugin-basics/
+     * @see      APVSliderSingleton
+     */
+    class APVSliderInit extends APVSliderSingleton
+    {
 
-			// Other Classes Instances
-			APVSliderCarbonFieldsSetup::get_instance();
-			APVSliderPageOptions::get_instance();
-			APVSliderPostTypeRegistration::get_instance();
-			APVSliderShortcode::get_instance();
-		}
+        /**
+         * APV Slider Init Construct function
+         */
+        public function __construct()
+        {
+            $this->defineConstants();
+            add_action(
+                'after_setup_theme', 
+                array( $this, 'apvSliderLoadTextdomain' )
+            );
+            add_action('wp_enqueue_scripts', array( $this, 'apvSliderScripts' ));
 
-		public function define_constants()
-		{
-			define('APV_SLIDER_URL', plugins_url() . '/apv-slider/');
-			define('APV_SLIDER_VERSION', '1.0.0');
-		}
+            // Other Classes Instances
+            APVSliderCarbonFieldsSetup::getInstance();
+            APVSliderPageOptions::getInstance();
+            APVSliderPostTypeRegistration::getInstance();
+            APVSliderShortcode::getInstance();
+        }
 
-		public function apv_slider_load_textdomain()
-		{
-			load_plugin_textdomain('apv-slider', false, 'apv-slider/languages');
-		}
+        /**
+         * Define Constants function
+         *
+         * @return void
+         */
+        public function defineConstants()
+        {
+            define('APV_SLIDER_URL', plugins_url() . '/apv-slider/');
+            define('APV_SLIDER_VERSION', '1.0.0');
+        }
 
-		public function apv_slider_scripts()
-		{
-			wp_register_script(
-				'apv-slider-flexslider-src-script',
-				APV_SLIDER_URL . 'assets/jquery.flexslider-min.js',
-				array('jquery'),
-				APV_SLIDER_VERSION,
-				true
-			);
+        /**
+         * APV Slider Load Textdomain function
+         *
+         * @return void
+         */
+        public function apvSliderLoadTextdomain()
+        {
+            load_plugin_textdomain('apv-slider', false, 'apv-slider/languages');
+        }
 
-			wp_register_script(
-				'apv-slider-flexslider-script',
-				APV_SLIDER_URL . 'build/index.js',
-				array('jquery'),
-				APV_SLIDER_VERSION,
-				true
-			);
+        /**
+         * APV Slider Scripts function
+         *
+         * This functions registers the necessary scripts for APV Slider Plugin
+         *
+         * @return void
+         */
+        public function apvSliderScripts()
+        {
+            wp_register_script(
+                'apv-slider-flexslider-src-script',
+                APV_SLIDER_URL . 'assets/jquery.flexslider-min.js',
+                array( 'jquery' ),
+                APV_SLIDER_VERSION,
+                true
+            );
 
-			wp_register_style(
-				'apv-slider-flexslider-styles',
-				APV_SLIDER_URL . 'build/index.css',
-				array(),
-				APV_SLIDER_VERSION,
-				'all'
-			);
+            wp_register_script(
+                'apv-slider-flexslider-script',
+                APV_SLIDER_URL . 'build/index.js',
+                array( 'jquery' ),
+                APV_SLIDER_VERSION,
+                true
+            );
 
-			wp_localize_script(
-				'apv-slider-flexslider-script',
-				'SLIDER_OPTIONS',
-				array(
-					'isSliderBulletsDisabled' => carbon_get_theme_option('apv_slider_advanced_settings_bullets'),
-					'isSliderNavArrowsDisabled' => carbon_get_theme_option('apv_slider_advanced_settings_nav_arrows')
-				)
-			);
-		}
+            wp_register_style(
+                'apv-slider-flexslider-styles',
+                APV_SLIDER_URL . 'build/index.css',
+                array(),
+                APV_SLIDER_VERSION,
+                'all'
+            );
 
-		public static function activate()
-		{
-			update_option('rewrite_rules', '');
-		}
+            wp_localize_script(
+                'apv-slider-flexslider-script',
+                'SLIDER_OPTIONS',
+                array(
+                'isSliderBulletsDisabled'   => carbon_get_theme_option('apv_slider_advanced_settings_bullets'), // phpcs:ignore
+                'isSliderNavArrowsDisabled' => carbon_get_theme_option('apv_slider_advanced_settings_nav_arrows'), // phpcs:ignore
+                )
+            );
+        }
 
-		public static function deactivate()
-		{
-			flush_rewrite_rules();
-			unregister_post_type('apv-slider');
-		}
-	}
-endif;
+        /**
+         * Active function
+         *
+         * @return void
+         */
+        public static function activate()
+        {
+            update_option('rewrite_rules', '');
+        }
+
+        /**
+         * Deactivate function
+         *
+         * @return void
+         */
+        public static function deactivate()
+        {
+            flush_rewrite_rules();
+            unregister_post_type('apv-slider');
+        }
+    }
+}
